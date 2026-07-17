@@ -1,0 +1,26 @@
+# EditorConfig — https://editorconfig.org
+# Default: tabs, width 4, everywhere except where the file format
+# strictly forbids tab indentation.
+root = true
+
+[*]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# YAML's spec disallows tab characters for indentation — a tab here is a
+# parse error, not a style choice. This covers GitHub Actions workflows
+# (.github/workflows/*.yml) and any other YAML config.
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Markdown uses trailing double-spaces to force a line break, so trimming
+# trailing whitespace would silently break intentional line breaks in
+# prose. Indentation stays tabs/width 4 per the top-level default.
+[*.md]
+trim_trailing_whitespace = false
