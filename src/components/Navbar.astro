@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../public/logo.png';
+
+const navLinks = [
+	{ label: 'Home', href: '' },
+	{ label: 'About', href: 'about' },
+	{ label: 'Conference', href: '#conference' },
+	{ label: 'Committees', href: 'committees' },
+	{ label: "Preparation", href: '#preparation' },
+	{ label: 'Apply', href: '#apply' },
+	{ label: 'Sponsors & Affiliates', href: '#sponsors' },
+	{ label: 'Registration', href: '#registration' },
+];
+
+// Astro.url.pathname lets you detect the current page for "active link" styling
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-light-500 shadow-lg font-headings h-30">
+	<div class="max-w-6xl px-4 flex justify-between h-full">
+
+		<a href={import.meta.env.BASE_URL}>
+			<Image src={logo} alt="DCBMUN Logo" loading="eager" fetchpriority="high" class="size-30 sticky top-0 left-2"/>
+		</a>
+
+		<!-- Desktop links: hidden on mobile, shown from md breakpoint up -->
+		<ul class="hidden md:flex items-center self-center gap-8">
+			{navLinks.map(link => {
+				const href = `${import.meta.env.BASE_URL}${link.href}`;
+				const isActive = currentPath === href || currentPath === href + '/';
+				return (
+					<li>
+						<a
+							href={href}
+							class={`text-[17px] align-middle transition-colors hover:text-gold-500 ${
+								isActive ? 'font-bold' : 'font-medium'
+							}`}
+						>
+							{link.label}
+						</a>
+					</li>
+				);
+			})}
+		</ul>
+
+	</div>
+</header>
