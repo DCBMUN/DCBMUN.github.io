@@ -2,15 +2,18 @@
 import { Image } from 'astro:assets';
 import logo from '../../public/logo.png';
 
+const defaultStyles = 'text-lg align-middle transition-colors hover:text-gold-500'
+const disabledStyles = 'text-lg align-middle opacity-50 cursor-not-allowed'
+
 const navLinks = [
-	{ label: 'Home', href: '' },
-	{ label: 'About', href: 'about' },
-	{ label: 'Conference', href: '#conference' },
-	{ label: 'Committees', href: 'committees' },
-	{ label: "Preparation", href: '#preparation' },
-	{ label: 'Apply', href: '#apply' },
-	{ label: 'Sponsors & Affiliates', href: '#sponsors' },
-	{ label: 'Registration', href: '#registration' },
+	{ label: 'Home', href: '', disabled: false },
+	{ label: 'About', href: 'about', disabled: false },
+	{ label: 'Conference', href: 'conference', disabled: false },
+	{ label: 'Committees', href: 'committees', disabled: false },
+	{ label: "Preparation", href: '#preparation', disabled: true },
+	{ label: 'Apply', href: '#apply', disabled: true },
+	{ label: 'Sponsors & Affiliates', href: '#sponsors', disabled: true },
+	{ label: 'Registration', href: '#registration', disabled: true },
 ];
 
 // Astro.url.pathname lets you detect the current page for "active link" styling
@@ -27,13 +30,15 @@ const currentPath = Astro.url.pathname;
 		<!-- Desktop links: hidden on mobile, shown from md breakpoint up -->
 		<ul class="hidden md:flex items-center self-center gap-8">
 			{navLinks.map(link => {
-				const href = `${import.meta.env.BASE_URL}${link.href}`;
+				const href = link.disabled ? null : `${import.meta.env.BASE_URL}${link.href}`;
 				const isActive = currentPath === href || currentPath === href + '/';
 				return (
 					<li>
 						<a
 							href={href}
-							class={`text-[17px] align-middle transition-colors hover:text-gold-500 ${
+							class={`${
+								link.disabled ? disabledStyles : defaultStyles
+							} ${
 								isActive ? 'font-bold' : 'font-medium'
 							}`}
 						>
