@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Conference — DCBMUN">
+	<div class="w-full h-30 bg-blue-500 flex items-center justify-center">
+		<h1 class="text-4xl font-headings font-bold text-light-500">Conference</h1>
+	</div>
+	<div class="w-1/2 mx-auto my-10 font-body">
+		<p class="text-xl text-dark-500 text-center">
+			All delegates should closely look over all links below, and will be required to sign all policies.
+		</p>
+	</div>
+	<hr class="my-5 h-1 border-none bg-blue-500 w-3/5 mx-auto rounded-full" />
+	<div class="w-3/5 mx-auto mt-10 mb-20 grid grid-cols-1 md:grid-cols-2 font-headings text-3xl font-bold">
+		<a class="m-2 bg-blue-500 rounded-lg md:col-1 h-40 text-light-500 transition-all hover:shadow-xl hover:scale-105 flex items-center justify-center text-center p-1" href="/conference/schedule">Schedule</a>
+		<a class="m-2 bg-blue-500 rounded-lg md:col-2 h-40 text-light-500 transition-all hover:shadow-xl hover:scale-105 flex items-center justify-center text-center p-1" href="/conference/media">Media</a>
+		<a class="m-2 bg-blue-500 rounded-lg md:col-span-full h-40 text-light-500 transition-all hover:shadow-xl hover:scale-105 flex items-center justify-center text-center p-1 cursor-not-allowed">Conference Policy</a>
+		<a class="m-2 bg-blue-500 rounded-lg md:col-1 h-40 text-light-500 transition-all hover:shadow-xl hover:scale-105 flex items-center justify-center text-center p-1 cursor-not-allowed">Conference Expectations</a>
+		<a class="m-2 bg-blue-500 rounded-lg md:col-2 h-40 text-light-500 transition-all hover:shadow-xl hover:scale-105 flex items-center justify-center text-center p-1 cursor-not-allowed">Venue Policy</a>
+	</div>
+</Layout>
