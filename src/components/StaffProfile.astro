@@ -1,0 +1,31 @@
+---
+export interface Props {
+	headshot_src: string;
+	name: string;
+	title: string;
+	email?: string;
+	biography: string;
+}
+
+const { headshot_src, name, title, email, biography } = Astro.props;
+
+---
+
+<article class="group flex w-full flex-col md:flex-row md:even:flex-row-reverse my-5">
+	<div class="w-5/6 mx-auto md:mx-0 h-auto md:w-1/4 shrink-0">
+		<img src={headshot_src} alt={name} class="w-full h-full object-cover rounded-md">
+	</div>
+
+	<div class="flex flex-1 flex-col md:text-left md:group-even:text-right">
+		<header class="px-6 md:px-8 py-5 font-body">
+			<p class="text-2xl">
+				<span class="font-bold">{title}</span> { email && ( <> {' — '} <a href=`mailto:${email}` class="hover:underline">{email}</a></> ) }
+			</p>
+			<p class="text-3xl font-headings">{name}</p>
+		</header>
+
+		<div class="bg-gray-300 px-6 md:px-8 py-6 font-body text-md md:text-xl leading-relaxed">
+			{biography}
+		</div>
+	</div>
+</article>

@@ -1,54 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StaffProfile from '../components/StaffProfile.astro';
+import { secretariat } from '../data/staff';
 ---
 
 <Layout title="About — DCBMUN">
 	<div class="w-full h-30 bg-blue-500 flex items-center justify-center">
 		<h1 class="text-4xl font-headings font-bold text-light-500">About</h1>
 	</div>
-	<div class="w-1/2 mx-auto my-10 font-body">
+	<div class="w-full px-2 md:px-0 md:w-3/5 mx-auto my-10 font-body">
 		<p class="text-xl text-dark-500 text-center">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet massa
-			at finibus congue. Donec viverra lacus at elementum scelerisque. Proin aliquet
-			blandit malesuada. Vestibulum ac leo porttitor, pharetra ante a, pretium quam.
-			Vestibulum ornare egestas est, a accumsan neque pulvinar ut. Sed sed eros vel
-			lacus sagittis ornare. Curabitur vel tristique nunc.
+			Dr. Charles Best Model United Nations (DCBMUN) is a student-run, not-for-profit
+			Model United Nations conference designed to introduce high school students to a
+			world of diplomacy, debate, and collaboration. DCBMUN aims to create an engaging
+			environment where both experienced delegates and newcomers can develop confidence,
+			enhance speaking skills, and explore global issues through problem-solving.
 		</p>
 		<br />
 		<p class="text-xl text-dark-500 text-center">
-			Etiam nec nisi vehicula odio scelerisque faucibus. Etiam porttitor posuere nulla,
-			ac iaculis sapien posuere eget. Aliquam erat volutpat. Donec ullamcorper velit at
-			mi lobortis auctor. Vivamus enim sem, rhoncus ut scelerisque non, posuere ut justo.
-			Mauris non turpis placerat, vestibulum elit et, convallis felis. Duis blandit, magna
-			vitae finibus bibendum, odio risus posuere velit, sit amet tincidunt mauris dui eu
-			orci.
+			Founded on the belief that opportunities for learning and leadership should be
+			accessible to everyone, DCBMUN emphasizes inclusion, inquisitiveness, and innovation.
+			Whether delegates are attending their first conference or looking to strengthen their
+			diplomatic abilities, DCBMUN offers a supportive environment where every delegate is
+			encouraged to participate, collaborate, and grow with confidence.
 		</p>
 		<br />
 		<p class="text-xl text-dark-500 text-center">
-			Aenean porttitor urna vitae eros fringilla, non hendrerit libero fermentum. Donec viverra
-			malesuada tellus, at maximus leo euismod ac. Vivamus gravida lorem enim, vel malesuada diam
-			fermentum quis. Curabitur eu tellus elit. Maecenas facilisis id felis eu varius. Pellentesque
-			ut urna id lorem fringilla laoreet. Nunc porttitor dolor non leo efficitur, nec pretium nisl
-			interdum.
+			DCBMUN believes that one's greatest means of communication comes from the confidence
+			one has to learn from themselves and others. In order to learn from yourself, DCBMUN
+			believes one must be able to believe in one's self; this is why DCBMUN has chosen
 		</p>
 	</div>
-	<div class="w-1/2 mx-auto my-10 bg-gold-500 h-70 rounded-xl">
-
+	<div class="w-11/12 md:w-1/2 mx-auto bg-gold-500 h-auto rounded-xl text-2xl text-center p-5 text-light-500 font-bold font-headings">
+		“Always believe in yourself. Do this and no matter where you are, you will have nothing to fear" <span class="text-nowrap">- Hayao Miyazaki</span>
+	</div>
+	<div class="w-full px-2 md:px-0 md:w-3/5 mx-auto my-10 font-body">
+		<p class="text-xl text-dark-500 text-center">
+			to represent our first iteration. From believing in yourself you can truly learn from yourself, then you will have nothing to fear.
+		</p>
 	</div>
 	<div class="w-full h-30 bg-blue-500 flex items-center justify-center">
 		<h1 class="text-4xl font-headings font-bold text-light-500">Secretariat</h1>
 	</div>
-	<div class="w-1/2 mx-auto my-10 font-body">
-		<p class="text-xl text-dark-500 text-center">
-			Coming soon.
-		</p>
+	<div class="w-full mx-auto my-10 font-body">
+		{secretariat.map(person => (
+			<StaffProfile
+				headshot_src={person.headshot_src}
+				name={person.name}
+				title={person.title}
+				email={person.email}
+				biography={person.biography}
+			/>
+		))}
 	</div>
-	<div class="w-full h-30 bg-blue-500 flex items-center justify-center">
-		<h1 class="text-4xl font-headings font-bold text-light-500">Staff</h1>
-	</div>
-	<div class="w-1/2 mx-auto my-10 font-body">
-		<p class="text-xl text-dark-500 text-center">
-			Coming soon.
-		</p>
-	</div>
+	<!--<div class="w-full h-30 bg-blue-500 flex items-center justify-center">-->
+	<!--	<h1 class="text-4xl font-headings font-bold text-light-500">Staff</h1>-->
+	<!--</div>-->
+	<!--<div class="w-1/2 mx-auto my-10 font-body">-->
+	<!--	<p class="text-xl text-dark-500 text-center">-->
+	<!--		Coming soon.-->
+	<!--	</p>-->
+	<!--</div>-->
 </Layout>
