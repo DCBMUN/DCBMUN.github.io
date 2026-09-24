@@ -7,12 +7,6 @@ export const secretariat = [
 		biography: "Entering the final year of her Model United Nations tenure, Alvina could not be more honoured to serve as the Secretary-General at the inaugural iteration of DCBMUN. A rising senior at Dr. Charles Best Secondary School, she first stepped into the fascinating world of Model United Nations driven by her passion for politics and global affairs. Ever since her embarrassing first conference, Alvina has grown to love the absolute ragebait, table-banging, unserious note-passing, and the last-minute preparations of MUN. Currently prioritizing rewatching America’s Sweethearts: Dallas Cowboys Cheerleaders for the 20th time rather than writing her university applications, Alvina wishes all delegates a truly unforgettable and entertaining conference experience!"
 	},
 	{
-		name: 'Ysabel Zeng',
-		title: 'Director-General',
-		headshot_src: '/team/ysabel.jpg',
-		biography: "Entering the 12th grade and last year of Model United Nations, Ysabel is elated to serve as the Director-General in addition with USG of marketing for DCBMUN. After joining the school MUN club only to support her friend, Ysabel has since grown to adore the chaotic and fruitful debate, impulsive improvisation, and the wild note passing of MUN. Aside from MUN, Ysabel can be found larping different shows, eating Vietnamese salad rolls, going on walks, and going to the gym. She hopes that all staff and delegates enjoy their time, making genuine memories at DCBMUN."
-	},
-	{
 		name: 'Maisie Wylie',
 		title: 'Chief of Staff',
 		email: 'cos.dcbmun@gmail.com',
